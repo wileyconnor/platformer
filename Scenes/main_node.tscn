@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://dvhnyxldt2p18"]
+[gd_scene load_steps=4 format=3 uid="uid://dvhnyxldt2p18"]
+
+[ext_resource type="Script" uid="uid://pd15d7eyoc5e" path="res://Scenes/player_node.gd" id="1_5otrc"]
+[ext_resource type="Texture2D" uid="uid://b13t5vt5vlexp" path="res://Assets/icon.svg" id="1_jah86"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5otrc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jah86")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="MainNode" type="Node2D"]
+
+[node name="PlayerNode" type="Node2D" parent="."]
+script = ExtResource("1_5otrc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerNode"]
+sprite_frames = SubResource("SpriteFrames_5otrc")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
